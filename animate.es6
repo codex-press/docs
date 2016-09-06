@@ -3,8 +3,8 @@ import app from 'app';
 import animate from 'animate';
 import dom from 'dom';
 import {goldenRatio} from 'utility';
-
-article.ready().then(() => {
+  
+dom.ready.then(() => {
 
   // create structure
   let sections = Object.keys(animate).map(n => {
@@ -23,7 +23,7 @@ let tick = (time) => el.transform({x: easeX(time)});
 animate({duration, tick});</pre></code>
       </section>
     `);
-    article.append(el);
+    dom(document.body).append(el);
     return [el, animate[n]];
   });
 
