@@ -1,5 +1,4 @@
 import article from 'article';
-import app from 'app';
 import animate from 'animate';
 import dom from 'dom';
 import {goldenRatio} from 'utility';
@@ -34,7 +33,7 @@ animate({duration, tick});</pre></code>
     width = Math.round(window.innerWidth * .6);
     height = width / 1.61803398875;
     sections.map(([el, fn]) => {
-      let canvas = dom.find(el, 'canvas.chart');
+      let canvas = dom.first(el, 'canvas.chart');
       canvas.width = width;
       canvas.height = height;
       drawChart(fn, canvas);
@@ -42,13 +41,13 @@ animate({duration, tick});</pre></code>
   };
  
   resize();
-  app.on('resize', resize);
+  article.on('resize', resize);
 
   // buttons
   let duration = 2000;
   let durationOptions = [500,1000,2000];
 
-  dom('nav .time').bind('click', () => {
+  dom('nav .time').on('click', () => {
     let i = durationOptions.indexOf(duration) || 0;
     duration = durationOptions[(i+1) % durationOptions.length]
     let s = Math.round(duration/100) / 10;
@@ -58,26 +57,26 @@ animate({duration, tick});</pre></code>
   let loop = true;
   let play = true;
 
-  dom('nav svg.loop').bind('click', () => {
+  dom('nav svg.loop').on('click', () => {
     loop = !loop;
   });
 
-  dom('nav svg.eject').bind('click', () => {
+  dom('nav svg.eject').on('click', () => {
     play = !play;
   });
 
 
   // every frame, draw the ones that are onscreen
-  app.on('tick', timestamp => {
+  article.on('tick', timestamp => {
     if (!play)
       return;
 
     let time = timestamp % duration / duration;
     sections.filter(onscreen).map(([el, fn]) => {
-      dom(el).find('.bar').transform({
+      dom(el).select('.bar').transform({
         y: fn(height, 0, time),
       });
-      dom(el).find('.circle').transform({
+      dom(el).select('.circle').transform({
         x: time * width,
         y: fn(height, 0, time),
       });
