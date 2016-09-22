@@ -3,12 +3,6 @@ import animate from 'animate';
 import dom from 'dom';
 
 article.on('ready', () => {
-<<<<<<< HEAD
-  
-  var ctx = dom.find('canvas').getContext('2d');
-
-    
-=======
 
   let width = window.innerWidth * .8;
   let height = window.innerHeight * .8;
@@ -24,7 +18,6 @@ article.on('ready', () => {
   ctx.fillStyle = 'green';
   ctx.arc(10, 35, 10, 0, 2 * Math.PI);
   ctx.fill();
->>>>>>> afa0663780bee855e0d4cee366d194bd297caeba
 
 });
 
