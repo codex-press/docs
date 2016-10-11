@@ -1,4 +1,4 @@
-@import "/lib/highlight_js/solarized_light.css";
+@import 'lib/source_code';
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,800';
 
 body {
@@ -6,16 +6,17 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+
 section {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
 }
 
-pre.hljs {
+section > pre {
   flex: 0 0 auto;
   width: 50%;
-  margin: 0;
+  margin: 0 !important;
 }
 
 div.comment {
@@ -24,8 +25,15 @@ div.comment {
   padding: 1em;
 }
 
+section:first-child > pre {
+  display: none;
+}
+section:first-child div.comment {
+  width: 100%;
+}
+
+
 div.comment p code {
-  background: #ddd;
   padding: 0.1em 0.3em;
   border-radius: 0.2em;
 }
@@ -33,7 +41,6 @@ div.comment p code {
 div.comment pre {
   margin: 0 2em;
   border-radius: 0.1em;
-  background: #ddd;
   padding: 0.2em;
 }
 
