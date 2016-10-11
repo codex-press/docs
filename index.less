@@ -25,11 +25,23 @@ body {
   }
 }
 
+@media (max-width: 500px) {
+  html {
+    font-size: 14px;
+  }
+}
 
 nav {
   text-align: center;
-  margin: 2rem 0;
+  max-width: 900px;
+  margin: 1rem auto 2rem;
   font-family: museo-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 500px) {
+  nav {
+    display: none;
+  }
 }
 
 nav a {
@@ -39,10 +51,17 @@ nav a {
   font-weight: 300;
   margin: 0 1rem;
 }
+
 nav a:hover {
   color: @textColor;
 }
 
+a {
+  color: hsl(152, 82%, 40%);
+}
+a:visited {
+  color: hsl(152, 82%, 20%);
+}
 
 h1 { 
   font-weight: bolder;
@@ -67,7 +86,7 @@ h1, h2 {
 h2 {
   font-weight: 400;
   color: white; 
-  background-color:  #01E57B;
+  background-color: hsl(152, 100%, 45%);
   padding: 0.5rem 1rem;
 }
 
@@ -115,10 +134,18 @@ figure {
   max-width: 50rem;
 }
 
+// ugh
+.strong {
+  font-weight: bold;
+}
+.em {
+  font-variant: italic;
+}
+
 .code {
   font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
   background-color: #ddd;
-  padding: 0.15em 0.35em;
+  padding: 0.1em 0.35em;
   font-size: 0.95em;
   border-radius: 0.25em;
 }
@@ -129,7 +156,7 @@ figure {
 }
 
 
-ul, ol, pre, table {
+ul, ol, table {
   max-width: @textWidth;
   margin: auto;
   padding: 0 1rem;
@@ -140,7 +167,9 @@ ul, ol {
 }
 
 pre {
-  white-space: pre-wrap;
+  white-space: pre-wrap !important;
+  max-width: calc(@textWidth - 2rem);
+  margin: auto !important;
 }
 
 
