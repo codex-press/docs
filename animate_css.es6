@@ -2,6 +2,7 @@ import prism from 'prismjs';
 import article from 'article';
 import dom from 'dom';
 
+
 let text = [
   'Come sleep with me: We won\'t make Love, Love will make us.',
   'Memory is a mirror that scandalously lies.',
