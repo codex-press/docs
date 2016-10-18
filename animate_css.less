@@ -1,3 +1,6 @@
+@import (inline) 'node_modules/prismjs/themes/prism.css';
+@import 'index';
+@import 'fx';
 
 article {
   width: 90%;
@@ -5,42 +8,57 @@ article {
   margin: auto;
 }
 
-.options {
+.step {
+  font-weight: bold;  
+}
+
+.class-picker .options {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   margin: 3rem 0;
 }
 
-
-.choice:hover {
-  color: red;
+.class-picker button {
+  font-size: 0.8em;
+  display: block;
+  padding: 0.8em;
+  margin: 0.5em;
+  border-radius: 0.2em;
+  border: 1px solid;
+  text-align: center;
+  background: #eee;
+  outline: none;
   cursor: pointer;
 }
 
-.choice.selected {
-  color: green;
-  font-weight: bold;
+.class-picker button:hover {
+  background: #999;
 }
 
+.class-picker button.selected {
+  color: white;
+  background-color: hsl(152, 100%, 40%);
+  border: 1px solid hsla(152, 100%, 20%, 1);
+}
 
-.content {
+.class-picker .content {
   font-size: 2rem;
   text-align: center;
   margin: 6rem 0;
+  padding: 3rem;
+  border: 1px solid #999;
+  border-radius: 0.2rem;
 }
 
-.content:focus {
-  outline: 1px solid red;
+.class-picker .content:focus {
+  outline: none;
+  border-color: red;
 }
 
-.note {
-  text-align: center;
-  margin: 3rem 0;
+
+.selector-input {
+  margin-left: 1em;
+  outline: none;
 }
-
-.result {
-
-}
-
 
