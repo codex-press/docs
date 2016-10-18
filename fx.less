@@ -30,6 +30,7 @@ header {
   font-family: Times;  
   z-index: 0;
   opacity: .5;
+  padding: 2rem;
   transform: translateX(-200px) skew(-15deg);
   background: linear-gradient(
      hsla(50, 80%, 50%, 0.9),
@@ -45,7 +46,9 @@ h1 {
   z-index: 10;
   text-align: center;
   margin: 3rem auto 1rem;
-  background-image: linear-gradient( #bfff00, #40ff00);
+  background-image: linear-gradient( 
+    hsla(300, 100%, 50%, 1),
+    hsla(0, 80%, 50%, 1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -56,7 +59,9 @@ h2 {
   text-align: center;
   margin: 2rem auto;
   font-weight: 400; 
-  background-image: linear-gradient( #bfff00, #40ff00);
+  background-image: linear-gradient( 
+    hsla(300, 100%, 50%, 1),
+    hsla(0, 80%, 50%, 1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
