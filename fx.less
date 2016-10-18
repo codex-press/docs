@@ -1,11 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
 
-h1 .fx {
-  // display: inline-block;
+body {
+  font-family: 'lato';
+}
+
+p {
+  font-weight: 300;
+}
+
+header {
+  color: #eee;
+  background-color: hsl(200, 80%, 10%); 
+  font-size: 2em; 
+  text-align: center;
+  margin: auto;
+  padding-top: 2em;
+  overflow: hidden;
+}
+
+.fx {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
   font-size: 6em;
+  line-height: 1;
+  margin: 0;
   font-style: italic;
   font-weight: 300;
-  // z-index: 0;
-  // opacity: 0.7;
-  margin-right: -3rem;
+  font-family: Times;  
+  z-index: 0;
+  opacity: .5;
+  transform: translateX(-200px) skew(-15deg);
+  background: linear-gradient(
+     hsla(50, 80%, 50%, 0.9),
+     hsla(20, 100%, 50%, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1rem;
+}
+
+h1 {
+  position: relative;
+  font-weight: 400;
+  z-index: 10;
+  text-align: center;
+  margin: 3rem auto 1rem;
+  background-image: linear-gradient( #bfff00, #40ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  position: relative;
+  font-family: "Lato";
+  text-align: center;
+  margin: 2rem auto;
+  font-weight: 400; 
+  background-image: linear-gradient( #bfff00, #40ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.intro { 
+  font-weight: 300;  
+  text-align: center;
+  margin: 3em auto;
 }
 
