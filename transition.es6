@@ -8,19 +8,19 @@ let text = [
   'Memory is a mirror that scandalously lies.',
 ];
 
-// utility functions
+// Utility functions
 let randomIndex = array => Math.trunc(Math.random() * array.length);
 let random = array => array[randomIndex(array)];
 let s = string => string.split(/ /);
 let j = array => array.join('');
 
-// main class names
+// The class names that define transition-property
 let names = s('fade zoom slide-up slide-down slide-left slide-right')
 let nameHTML = j(names.map((n,i) =>
   `<button><code>.${n}</code></button>`)
 );
 
-// transition-timing-function
+// `transition-timing-function`
 let timings = s('ease ease-in ease-out ease-in-out linear');
 
 let timingHTML = (
@@ -28,7 +28,7 @@ let timingHTML = (
   j(timings.slice(1).map(t => `<button><code>.${t}</code></button>`))
 );
 
-// transition-duration
+// `transition-duration`
 let durations = [
   s('faster 0.3s'),
   s('fast 0.5s'),
@@ -42,13 +42,13 @@ let durationHTML = j(durations.map(([k,v]) =>
 ))
 
 
-// transition-delay
+// `transition-delay`
 let delays = [
   s(' 0s'),
   s('short-delay 0.25s'),
-  s('delay 1s'),
-  s('long-delay 1.5s'),
-  s('longer-delay 2s'),
+  s('delay 0.5s'),
+  s('long-delay 1s'),
+  s('longer-delay 1.5s'),
 ];
 
 let delayHTML = (
@@ -74,8 +74,8 @@ let classPickerHTML = `
 // Build the initial state. This object is just a series of four numbers 
 // that are indexes in the arrays of values listed above.
 let state = {
-  // just does .fade
-  name: 0,
+  // .zoom
+  name: 1,
   // `ease` is default in CSS
   timing: 0,
   // 1s duration
@@ -85,10 +85,6 @@ let state = {
 };
 
 
-// XXX can remove
-function index(el) {
-  return Array.from(el.parentNode.children).indexOf(el);
-}
 
 article.ready.then(() => {
 
@@ -100,16 +96,13 @@ article.ready.then(() => {
 
   // Hook button press event.
   dom('.class-picker').delegate('click','button', e => {
-    // XXX can use closestW() here
-    let prop = dom(dom(e.target).closest('.buttons')).data('prop');
-    // XXX can use closestW and index() here
-    state[prop] = index(dom(e.target).closest('button'));
+    let prop = dom(e.target).closestW('.buttons').data('prop');
+    state[prop] = dom(e.target).closestW('button').index()
     renderClassPicker();
   });
 
   // Provide an editable element for putting in the selector.
-  // XXX can use attr() which (should) now work with Array
-  dom.first('.selector-input').setAttribute('contentEditable', true);
+  dom('.selector-input').attr('contentEditable', true);
 
   // Events for the place where they put in the class name.
   dom('.selector-input').bind({
@@ -123,10 +116,16 @@ article.ready.then(() => {
     // Paste gets newlines removed
     paste: e => {
       e.preventDefault();
-      console.log(e);
+      let string = e.clipboardData.getData('text/plain').replace('\n','');
+      document.execCommand('insertText', false, string);
     },
 
   });
+
+  // Move selection into the .content box that has the transition so 
+  // that people will know they can type there
+  dom.first('.content').focus();
+  window.getSelection().collapse(dom.first('.content'), 1);
 
 });
 
@@ -141,7 +140,7 @@ function renderClassPicker() {
   // Remove existing class names
   dom.first('.content').className = 'content';
 
-  // use state to find class names for that were picked
+  // Use state to find class names that were picked
   let classes = [
     names[state.name],
     timings[state.timing],
@@ -149,7 +148,7 @@ function renderClassPicker() {
     delays[state.delay][0],
   ].filter(c => !!c && c !== 'ease');
 
-  // apply state to buttons
+  // Apply state to `<button>`s
   dom([
     dom('[data-prop=name] button')[state.name],
     dom('[data-prop=timing] button')[state.timing],
@@ -157,10 +156,10 @@ function renderClassPicker() {
     dom('[data-prop=delay] button')[state.delay]
   ]).addClass('selected');
 
-  // Show classnames needed to be used.
+  // Add class names to the `.content`
   dom('.content').addClass(classes.join(' '))
   
-  // Trigger reflow to reset
+  // Trigger reflow so the animation is triggered.
   dom.first('.content').offsetWidth;
 
   // Start animation
@@ -169,6 +168,7 @@ function renderClassPicker() {
   // Add selected class names to the `.result` location.
   dom('.result-classes').text(`.onscreen.${ classes.join('.') }`);
 
+  // Show the generated CSS
   renderCSS();
 };
 
@@ -201,15 +201,15 @@ function renderCSS() {
 
     propsOnscreen = 'opacity: 1;\n  ';
     if (name === 'zoom')
-      propsOnscreen += 'transform: scale(.9);';
+      propsOnscreen += 'transform: scale(.8);';
     else if (name === 'slide-up')
-      propsOnscreen += 'transform: translateY(-100px);';
+      propsOnscreen += 'transform: translateY(-70px);';
     else if (name === 'slide-down')
-      propsOnscreen += 'transform: translateY(100px);';
+      propsOnscreen += 'transform: translateY(70px);';
     else if (name === 'slide-right')
-      propsOnscreen += 'transform: translateX(100px);';
+      propsOnscreen += 'transform: translateX(70px);';
     else if (name === 'slide-left')
-      propsOnscreen += 'transform: translateX(-100px);';
+      propsOnscreen += 'transform: translateX(-70px);';
 
   }
 
