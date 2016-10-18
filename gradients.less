@@ -1,61 +1,12 @@
 @import (inline) 'node_modules/prismjs/themes/prism.css';
 @import 'fx.less';
 
-.dek {
-  color: #eee;
-  background-color: hsl(200, 80%, 10%); 
-  font-size: 2em; 
-  text-align: center;
-  margin: auto;
-  padding-top: 2em;
-}
-
-p {
-  font-family: "Lato";
-}
-
-h1 { 
-  text-align: center;
-  margin: auto;
-  padding-top: 2em;
-  background:
-    -webkit-linear-gradient(
-      hsla(300, 100%, 50%, 1), 
-      hsla(0, 80%, 50%, 1));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-body {
-  white-space: normal;
-  font-family: "Lato";
-}
-
-h2 {
-  font-family: "Lato";
-  text-align: center;
-  margin: auto;
-  padding-top: ;
-  white-space: normal;
-  font-weight: 400;  
-  background: -webkit-linear-gradient(right, #ff0ae2, crimson);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.intro { 
-  font-weight: 300;  
-  text-align: center;
-  margin: 3em auto;
-}
-
 .container {
   margin: auto;
   padding: 1.2em;
   max-width: 30em;
   border-bottom: 1px solid hsl(30, 100%, 50%);
 }
-
 
 .box {
   height: 200px; 
@@ -65,7 +16,13 @@ h2 {
 }
 
 .box-heading {
-  margin: .6em;
+  border: .1px solid grey;
+  background-color: #eee;
+  padding: .5rem;
+  color: crimson;
+  vertical-align: top;
+  border-radius: .5em;
+  font-family: monospace;
   display: inline-block;
   vertical-align: top;
   text-align: left; 
@@ -79,8 +36,11 @@ h2 {
 }
 
 .code { 
-  background-color: initial;
-  margin-bottom: 0;
+  background-image: linear-gradient(#eee, #fff);
+  color: crimson;
+  margin: 0;
+  padding: .2rem;
+  font-family: monospace;
 }
 
 .skid {
