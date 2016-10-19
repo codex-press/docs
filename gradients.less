@@ -1,137 +1,38 @@
-/* utilitaian classes for rotating the gradients by degrees */
+@import 'fx.less';
 
-.gradients(@sel, @deg) {
-
-  .warm.gradient@{sel} {
-    background-image: linear-gradient(@deg crimson, orange);
-  }
-
-  .cold.gradient@{sel} {
-    background-image: linear-gradient(@deg blue, teal);
-  }
-
-  .violet.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      violet, hsl(220, 100%, 80%));
-  }
-
-  /* duochromes  */
-
-  .bluie.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(295, 45%, 20%, 1),
-      hsla(240, 90%, 60%, 1));
-  }
-
-  .pinklimo.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(325, 75%, 50%, 1),
-      hsla(280, 100%, 80%, 1));
-  }
-
-  .delta.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(145, 75%, 50%, 1),
-      hsla(080, 100%, 80%, 1));
-  }
-
-  .bravo.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(030, 75%, 50%, 1),
-      hsla(115, 100%, 80%, 1));
-  }
-
-  .gore.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(000, 75%, 50%, 1),
-      hsla(350, 100%, 80%, 1),
-      hsla(000, 75%, 50%, 1);)
-  }
-
-  .sunny.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(050, 75%, 50%, 1),
-      hsla(040, 100%, 80%, 1));
-  }
-
-  .bublegum.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(205, 75%, 50%, 1),
-      hsla(350, 100%, 55%, 1));
-  }
-
-  .flood.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsla(230, 75%, 20%, 1),
-      hsla(250, 050%, 55%, 1));
-  }
-
-  /*       */
-
-  .toxic-dew.gradient@{sel}{
-    background-image: linear-gradient(@deg
-      hsl(75, 100%, 50%), 
-      hsl(105, 100%, 50%));
-  }
-
-  .tomato.gradient@{sel} {
-    background-image: linear-gradient(@deg 
-      hsl(0, 100%, 65%) 15%,
-      hsl(250, 100%, 10%));
-  }
-
-  .fifties.gradient@{sel} {
-    background-image: linear-gradient(@deg 
-      hsla(10, 75%, 60%, 1) 0%,
-      #C6CA52 40%,
-      #74B0BB 42%,
-      #74B0BB 60%,
-      #236D6E 80%);
-  } 
-
-  .old-film.gradient@{sel} {
-    background-image: linear-gradient(@deg 
-      hsla(15, 90%, 10%, 1) 0%,
-      hsla(15, 100%, 15%, 1) 20%,
-      hsla(15, 80%, 10%, 1) 20%,
-      hsla(15, 100%, 15%, 1) 40%,
-      hsla(15, 60%, 10%, 1) 40%,
-      hsla(15, 100%, 15%, 1) 60%,
-      hsla(15, 40%, 10%, 1) 60%,
-      hsla(15, 100%, 15%, 1) 80%,
-      hsla(15, 20%, 10%, 1) 80%,
-      hsla(15, 100%, 15%, 1) 100%
-     );
-  }
-
-  .color-rings.gradient@{sel} {
-    background-image: radial-gradient(@deg
-      hsla(0, 100%, 50%, 1),
-      hsla(10, 100%, 50%, 1),
-      hsla(15, 100%, 50%, 1),
-      hsla(20, 100%, 50%, 1),
-      hsla(25, 100%, 50%, 1),
-      hsla(30, 100%, 50%, 1),
-      hsla(0, 100%, 50%, 1),
-      hsla(40, 100%, 50%, 1),
-      hsla(0, 100%, 50%, 1),
-      hsla(50, 100%, 50%, 1),
-      hsla(0, 100%, 50%, 1))
-  }
-
+.container {
+  margin: auto;
+  padding: 1.2em;
+  max-width: 30em;
+  border-bottom: 1px solid hsl(30, 100%, 50%);
 }
 
-.gradients(~'', ~'');
-.gradients(~'.rotate-45', ~'45deg,');
-.gradients(~'.rotate-180', ~'180deg,');
-.gradients(~'.rotate-270', ~'270deg,');
+.box {
+  height: 200px; 
+  width: 200px;
+  margin: .6em;
+  display: inline-block;
+}
 
+.box-heading {
+  border: .1px solid grey;
+  background-color: #eee;
+  padding: .5rem;
+  color: crimson;
+  vertical-align: top;
+  border-radius: .5em;
+  font-family: monospace;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left; 
+}
 
-
-/////////////////////////////////
-
-
-
+.box-text {
+  margin: .6em;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left; 
+}
 // How to use
 // ----------
 .gradient.fill {

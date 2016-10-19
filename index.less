@@ -1,12 +1,18 @@
 @import (inline) 'node_modules/prismjs/themes/prism.css';
-
-@textWidth: 40rem;
-@textColor: #333;
+@import 'variables.less';
+@import 'nav.less';
 
 body {
-  font-family: ingra, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: @ingra;
   color: @textColor;
   padding-bottom: 3rem;
+  padding-left: @navWidth;
+}
+
+@media @narrow {
+  body {
+    padding: 0 1rem;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -21,50 +27,6 @@ body {
   }
 }
 
-nav {
-  position: absolute;
-  font-family: museo-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-left: 1rem;
-}
-
-nav > a {
-  display: block;
-  margin-top: 1.5rem;
-  font-size: 1.2em;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  padding-left: 0.5rem;
-}
-
-nav > ul > li {
-  margin-top: 0.3em;
-}
-
-nav ul ul {
-  font-weight: 300;
-}
-
-@media (max-width: 500px) {
-  nav {
-    display: none;
-  }
-}
-
-nav a {
-  text-decoration: none;
-  color: #555;
-}
-
-nav ul ul a {
-  color: #888;
-}
-
-nav a:hover {
-  color: @textColor;
-}
 
 a {
   color: hsl(152, 82%, 40%);
@@ -80,20 +42,25 @@ h1 {
 }
 
 h1, h2 {
-  max-width: @textWidth;
-  margin: 1rem auto;
-  padding: 0 1rem;
-  font-family: museo-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: @museo;
 }
 
-@media (max-width:600px) {
+article > h1,
+article > h2 {
+  max-width: @textWidth;
+  margin: 1rem;
+}
+
+
+@media @narrow {
   h2 {
     padding: 10px;
     font-size: 2rem;
   }
 }
 
-h2 {
+// green subheadings
+h3 {
   font-weight: 400;
   color: white; 
   background-color: hsl(152, 100%, 45%);
@@ -101,48 +68,19 @@ h2 {
   padding: 0.5rem 1rem;
 }
 
-.subheading {
-  color:  #01E57B;
-  font-weight: bold;
-  font-size: 2em;
-  padding-bottom: 20px ;
-  margin: auto;
-  text-align: center;
-}
-
-.dropcap {
-  float: left;
-  font-size: 5em;
-  padding-right: .05em;
-  display: inline-block;
-  line-height: .85;
-}
-
-@media (max-width: 600px) {
-  p {
-    padding: 0 20px;
-    width:100%;
-    font-family: "Helvetica Neue", sans-serif;
-    line-height: 2em;
-  }
-}
-
-p {
+article > p {
   max-width: @textWidth;
   line-height: 1.4;
   padding: 0 1rem;
-  margin: 1rem auto;
 }
 
 .text-width {
-  padding: 0 1rem;
   max-width: @textWidth;
-  margin: auto;
 }
 
 figure {
-  margin: 1rem auto;
-  max-width: 50rem;
+  max-width: @textWidth;
+  margin: 1rem;
 }
 
 // ugh
@@ -168,25 +106,21 @@ figure {
 
 aside.sidebar {
   max-width: @textWidth;
-  margin: auto;
   border-top: 1px solid #888;
   border-bottom: 1px solid #888;
 }
 
 ul, ol, table {
   max-width: @textWidth;
-  margin: auto;
-  padding: 0 1rem;
 }
 
 ul, ol {
   padding-left: 3rem;
 }
 
-pre {
+article > pre {
   white-space: pre-wrap !important;
-  max-width: calc(@textWidth - 2rem);
-  margin: auto !important;
+  max-width: @textWidth;
 }
 
 
@@ -210,6 +144,7 @@ table td:first-child {
 // ---------
 
 figure.gallery {
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
 }
