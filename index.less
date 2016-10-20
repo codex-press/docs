@@ -5,8 +5,7 @@
 body {
   font-family: @ingra;
   color: @textColor;
-  padding-bottom: 3rem;
-  padding-left: @navWidth;
+  padding: 0 1rem 3rem @navWidth;
 }
 
 @media @narrow {
@@ -28,29 +27,24 @@ body {
 }
 
 
-a {
-  color: hsl(152, 82%, 40%);
-}
-a:visited {
-  color: hsl(152, 82%, 20%);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: @museo;
+
+  article > & {
+    max-width: @textWidth;
+    margin: 1rem 0;
+  }
 }
 
 h1 { 
-  font-weight: bolder;
-  font-style: small ;
+  font-weight: 900;
   font-size: 2.5em;
 }
-
-h1, h2 {
-  font-family: @museo;
-}
-
-article > h1,
-article > h2 {
-  max-width: @textWidth;
-  margin: 1rem;
-}
-
 
 @media @narrow {
   h2 {
@@ -63,9 +57,18 @@ article > h2 {
 h3 {
   font-weight: 400;
   color: white; 
-  background-color: hsl(152, 100%, 45%);
+  background-color: @headerGreen;
   margin-top: 3rem;
   padding: 0.5rem 1rem;
+}
+
+a {
+  color: @linkGreen;
+}
+
+a:hover,
+a:visited {
+  color: @linkVisitedGreen;
 }
 
 article > p {
@@ -79,8 +82,15 @@ article > p {
 }
 
 figure {
+  width: 100%;
   max-width: @textWidth;
   margin: 1rem;
+  border-left: 3px solid @headerGreen;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  padding: 0.5rem 0 0.5rem 1rem;
 }
 
 // ugh
@@ -118,7 +128,7 @@ ul, ol {
   padding-left: 3rem;
 }
 
-article > pre {
+pre {
   white-space: pre-wrap !important;
   max-width: @textWidth;
 }
@@ -174,8 +184,20 @@ figure.gallery .double-wide {
   flex-flow: column nowrap;
 }
 
-figure figcaption {
-  flex: 0 0 auto;
-  width: 100%;
+
+.clear {
+  clear: both;
 }
+
+img.theme {
+  float: left;
+  clear: left;
+  width: 180px;
+}
+
+article.themes h2 {
+  clear: both;
+  padding-top: 5rem;
+}
+
 
