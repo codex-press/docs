@@ -102,7 +102,7 @@ article.ready.then(() => {
   });
 
   // Provide an editable element for putting in the selector.
-  dom('.selector-input').attr('contentEditable', true);
+  dom('.selector-input').attr('contenteditable',true).attr('spellcheck',false);
 
   // Events for the place where they put in the class name.
   dom('.selector-input').bind({
