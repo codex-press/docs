@@ -1,0 +1,184 @@
+
+@sans: "ingra", Helvetica, Arial, sans-serif; 
+@serif: "adobe-text-pro", Georgia, Times, "Times New Roman", serif;
+
+@media (max-width: 1129px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1130px) {
+  html { 
+    font-size: 20px;
+  }
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 1rem;
+  font-family: @sans;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+main > div {
+  margin-bottom: 3em;
+}
+
+p {
+  max-width: 35em;
+  line-height: 1.5;
+  margin: 0 1rem;
+  font-family: "ingra",sans-serif;
+}
+
+.chatter {
+  font-family: "ingra",sans-serif;
+  line-height: 1.5;
+} 
+
+.intro {
+  margin: 2em auto .5em;
+}
+
+.first-p {
+  margin-bottom: 2em;
+}
+
+
+.headline {
+  margin-top: 2rem  ;
+  font-size: 2.5em;
+  font-family: @sans; 
+}
+
+.left p,
+p.left {
+  margin-left: 0;
+  margin-right: 30%;
+}
+
+.right p,
+p.right {
+  margin-right: 0;
+  margin-left: 30%;
+}
+
+@media (max-width: 600px) { 
+  .example-align {
+  margin-top: 1em;
+  }
+}
+
+
+.pigeon h1, 
+h2,
+h3,
+h4,
+h5,
+h6 {
+  white-space: nowrap;
+  overflow:hidden;
+}
+
+/* links */
+
+a { 
+  color: #CB403A;
+}
+a:hover {
+  color: #CB7F3A;
+}
+a:visited {
+  color: grey ;
+}
+
+
+/* spacing between couples of divs */
+.code {
+  color: #884ED9;
+  background-color: #eee;
+  padding: 0.3em;
+  border-radius:  3px;
+  font-size: 18px;
+  font-weight: normal;
+  font-family: "stevie-sans", Helvetica, Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.chatter {
+  flex: 1 1 50%;
+  min-width: 300px;
+  font-family: @sans;
+}
+
+
+.pigeon {
+  position: relative;
+  flex: 1 1 50%;
+  min-width: 300px;
+  padding-left: 100px;
+  box-sizing: border-box;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  line-height: 1.2;
+  color: #0D040F;
+}
+
+.pigeon {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-top: 1rem;
+  }
+}
+
+
+.pigeon .code {
+  position: absolute;
+  left: 1rem;
+  padding: 0.3em;
+  margin: 0;
+  margin-top: 1.2rem;
+  font-family: "stevie-sans", Helvetica, Arial, sans-serif;
+}
+
+.pigeon .sidebar {
+  float: none;
+  width: initial;
+}
+
+/* bullet list has an effect on the h3 where it adds the padding
+  of the bullets to h3 */
+.weird-li {
+  margin-left: -1em;
+  list-style-type: none;
+}
+
+@media (max-width:300px) { 
+  .pigeon .pullquote {
+    float: none;
+    width: initial;
+    margin-left: 1em;
+  }
+}
+
+.pigeon .pullquote {
+  float: none;
+  width: initial;
+  margin-left: 1em;
+}
