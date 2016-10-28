@@ -48,7 +48,6 @@ h1 {
 
 @media @narrow {
   h2 {
-    padding: 10px;
     font-size: 2rem;
   }
 }
@@ -71,10 +70,9 @@ a:visited {
   color: @linkVisitedGreen;
 }
 
-article > p {
+p {
   max-width: @textWidth;
   line-height: 1.4;
-  padding: 0 1rem;
 }
 
 .text-width {
@@ -195,9 +193,27 @@ img.theme {
   width: 180px;
 }
 
-article.themes h2 {
-  clear: both;
-  padding-top: 5rem;
-}
+article.themes {
+  h2 {
+    clear: both;
+    padding-top: 5rem;
+  }
 
+  svg.bird {
+    width: 200px;
+    margin-right: 1rem;
+    float: left;
+  }
+
+  svg.bird.pigeon {
+    transform: scale(0.9);
+  }
+
+  @media (max-width: 600px) {
+    svg.bird {
+      width: 100px;
+    }
+  }
+
+}
 
