@@ -1,6 +1,6 @@
 @import 'variables.less';
 
-nav {
+nav.docs-nav {
   position: absolute;
   left: 0;
   width: 250px;
@@ -8,23 +8,17 @@ nav {
   margin-left: 1rem;
 }
 
-@media @narrow {
-  nav {
-    position: relative;
-  }
-  nav ul ul {
-    display: none;
-  }
+nav.docs-nav .mobile-reveal {
+  display: none;
 }
 
-
-nav > a {
+nav.docs-nav > a {
   display: block;
   margin-top: 1.5rem;
   font-size: 1.2em;
 }
 
-nav ul {
+nav.docs-nav ul {
   width: 100%;
   list-style: none;
   padding: 0;
@@ -32,23 +26,60 @@ nav ul {
   margin: 0;
 }
 
-nav > ul > li {
+nav.docs-nav > ul > li {
   margin-top: 0.3em;
 }
 
-nav ul ul {
+nav.docs-nav ul ul {
   font-weight: 300;
 }
 
-nav a {
+nav.docs-nav a {
   text-decoration: none;
   color: #555;
 }
 
-nav ul ul a {
+nav.docs-nav ul ul a {
   color: #888;
 }
 
-nav a:hover {
+nav.docs-nav a:hover {
   color: @textColor;
 }
+
+
+@media @narrow {
+  nav.docs-nav {
+    position: relative;
+    margin-left: 0rem;
+  }
+
+  nav.docs-nav .links {
+    height: 0;
+    transition: height 0.3s ease-out;
+    overflow: hidden;
+  }
+  nav.docs-nav.expanded .links {
+    height: auto;
+  }
+
+  nav.docs-nav .reveal {
+    display: block;
+    font-size: 1.3em;
+    margin-top: 1rem;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  nav.docs-nav .reveal svg {
+    vertical-align: middle;
+    transform: rotate(90deg);
+    transition: transform 0.3s ease-out;
+  }
+
+  nav.docs-nav.expanded .reveal svg {
+    transform: none;
+  }
+
+}
+

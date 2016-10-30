@@ -1,8 +1,6 @@
 import article from 'article';
 import dom from 'dom';
 
-console.log('hey');
-
 article.ready.then(() => {
 
   dom('button.copy').on('click', e => {
