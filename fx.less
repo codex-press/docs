@@ -6,47 +6,51 @@ header {
   font-size: 2em; 
   text-align: center;
   margin-left: -270px;
+  margin-right: -1rem;
   padding-top: 2em;
   overflow: hidden;
 }
 
 @media @narrow {
   header {
+    font-size: 1.5em; 
     margin: 0 -1rem;
   }
 }
 
-.fx {
-  position: absolute;
-  top: 1rem;
-  left: 50%;
-  font-size: 6em;
-  line-height: 1;
-  margin: 0;
-  font-style: italic;
-  font-weight: 300;
-  font-family: Times, serif;  
-  z-index: 0;
-  opacity: .5;
-  padding: 2rem;
-  transform: translateX(-300px) skew(-15deg);
-  background: linear-gradient(
-     hsla(50, 80%, 50%, 0.9),
-     hsla(20, 100%, 50%, 0.9));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -1rem;
-}
 
 h1 {
   position: relative;
   font-weight: 400;
   z-index: 10;
   text-align: center;
-  margin: 3rem auto 1rem;
+  margin: 2rem 0 1rem;
   background-image: linear-gradient( 
     hsla(300, 100%, 50%, 1),
     hsla(0, 80%, 50%, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1:before {
+  position: absolute;
+  display: inline-block;
+  content: 'fx';
+  font-size: 2em;
+  margin-top: -5rem;
+  margin-left: -10rem;
+  padding: 2rem;
+  line-height: 1em;
+  margin-right: -0.3em;
+  font-style: italic;
+  font-weight: 300;
+  font-family: Times, serif;  
+  z-index: 0;
+  opacity: 0.3;
+  transform: skew(-15deg);
+  background: linear-gradient(
+     hsla(50, 80%, 50%, 0.9),
+     hsla(20, 100%, 50%, 0.9));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -55,7 +59,8 @@ h2 {
   position: relative;
   text-align: center;
   margin: 2rem auto;
-  font-weight: 400; 
+  font-weight: 200; 
+  font-size: 1.2em;
   background-image: linear-gradient( 
     hsla(300, 100%, 50%, 1),
     hsla(0, 80%, 50%, 1));
