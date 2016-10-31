@@ -21,18 +21,10 @@ body {
 }
 
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: @museo;
-
-  article > & {
-    max-width: @textWidth;
-    margin: 1rem 0;
-  }
+  max-width: @textWidth;
+  margin: 1rem 0;
 }
 
 h1 { 
@@ -40,31 +32,17 @@ h1 {
   font-size: 2.5em;
 }
 
-@media @narrow {
-  h2 {
-    font-size: 2rem;
-  }
-}
-
 // green subheadings
 h3 {
   font-weight: 400;
+  max-width: calc(@textWidth + 2rem);
   color: white; 
   background-color: @headerGreen;
-  margin-top: 3rem;
+  margin: 3rem -1rem 1rem;
   padding: 0.5rem 1rem;
 }
 h3:first-child {
   margin-top: 1rem;
-}
-
-a {
-  color: @linkGreen;
-}
-
-a:hover,
-a:visited {
-  color: @linkVisitedGreen;
 }
 
 p {
@@ -79,7 +57,7 @@ p {
 figure {
   width: 100%;
   max-width: @textWidth;
-  margin: 1rem;
+  margin: 1rem 0;
   border-left: 3px solid @headerGreen;
 }
 
@@ -88,8 +66,29 @@ figcaption {
   padding: 0.5rem 0 0.5rem 1rem;
 }
 
+
+
+
+
+
+
+
+
+// Inline
+// ------
+
+a {
+  color: @linkGreen;
+}
+
+a:hover,
+a:visited {
+  color: @linkVisitedGreen;
+}
+
+
 p code {
-  font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+  font-family: @monospace;
   background-color: #ddd;
   padding: 0.1em 0.35em;
   font-size: 0.95em;
@@ -170,7 +169,6 @@ figure.gallery .double-wide {
   flex-flow: column nowrap;
 }
 
-
 .clear {
   clear: both;
 }
@@ -181,7 +179,8 @@ img.theme {
   width: 180px;
 }
 
-article.themes {
+html[data-url="/docs/themes"] {
+
   h2 {
     clear: both;
     padding-top: 5rem;
@@ -204,4 +203,20 @@ article.themes {
   }
 
 }
+
+
+
+@media @narrow {
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  figure, table, .text-width, p, h1, h2, h3, h4, h5, h6 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
 

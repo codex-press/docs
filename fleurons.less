@@ -1,4 +1,4 @@
-@import 'index.less';
+@import 'variables.less';
 
 h2 {
 
@@ -14,16 +14,57 @@ body svg.fleuron {
   margin-top: 0;
 }
 
-article article {
-  display: flex;
-  flex: row nowrap;
+
+.example-bike {
+
+  svg.penny-farthing .bike {
+    fill: red;
+  }
+
+  svg.penny-farthing .front-wheel {
+    stroke: green;
+  }
+
+  svg.penny-farthing .back-wheel {
+    stroke: yellow;
+  }
+
 }
 
-p {
-  margin: 0;
-}
 
-.variation {
-  cursor: pointer;
+article {
+
+  article {
+    display: flex;
+    flex: row nowrap;
+    justify-content: center;
+    margin: 3rem 0;
+  }
+
+  article > :last-child {
+    width: 300px;
+  }
+
+  svg.fleuron {
+    width: 200px;
+    margin: 1rem;
+  }
+
+  h4 {
+
+  }
+
+  .variation {
+    cursor: pointer;
+    font-family: @monospace;
+    font-weight: 800;
+    color: #777;
+    margin: 0;
+  }
+
+  .variation:hover {
+    color: crimson;
+  }
+
 }
 
