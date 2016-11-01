@@ -1,17 +1,62 @@
+@import 'variables.less';
 @import 'fx.less';
 
-.container {
+.rotate-demo {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.rotate-demo > div {
+  flex: 1 1 300px;
+}
+
+.rotate-demo .gradient {
+  height: 100px; 
+  width: 100px;
+}
+
+.image-demo {
+  position: relative;
+  max-width: @textWidth !important;
+}
+
+.animate-demo .container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.animate-demo-two {
+  max-width: @textWidth;
+  height: 20em;;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.animate-demo-two .words {
+  max-width: initial;
+  position: relative;
+}
+
+
+article article {
   margin: auto;
   padding: 1.2em;
   max-width: 30em;
   border-bottom: 1px solid hsl(30, 100%, 50%);
 }
 
-.box {
+
+article article .gradient {
   height: 200px; 
   width: 200px;
   margin: .6em;
-  display: inline-block;
 }
 
 .box-heading {
