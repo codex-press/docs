@@ -1,6 +1,9 @@
 @import 'variables.less';
 @import 'fx.less';
 
+// Rotate Classes
+// --------------
+
 .rotate-demo {
   display: flex;
   flex-flow: row wrap;
@@ -15,17 +18,42 @@
   width: 100px;
 }
 
-.image-demo {
-  position: relative;
+
+div.image-demo {
   max-width: @textWidth !important;
 }
 
-.animate-demo .container {
-  position: relative;
+
+// Animation
+// ---------
+
+.animation-controls .overflow-checkbox {
+  cursor: pointer;
+  user-select: none;
+}
+
+.animation-controls button {
+  display: inline-block;
+}
+
+.animate-demo .row  {
+  flex-flow: row wrap;
+}
+
+.animate-demo .row p {
+  flex: 0 0 400px;
+  margin: 1rem 0;
+}
+
+.animate-demo .gradient-parent {
+  flex: 0 0 auto;
   width: 200px;
   height: 200px;
-  overflow: hidden;
+  margin-top: 1rem;
 }
+
+
+// this shows layered animation
 
 .animate-demo-two {
   max-width: @textWidth;
@@ -44,22 +72,34 @@
   position: relative;
 }
 
+.animate-demo-two .words code {
+  background: none;
+}
+
+
 
 article article {
-  margin: auto;
-  padding: 1.2em;
-  max-width: 30em;
-  border-bottom: 1px solid hsl(30, 100%, 50%);
+  display: flex;
+  flex-flow: row nowrap;
+  // padding: 1.2em;
+  // border-bottom: 1px solid hsl(30, 100%, 50%);
+  margin: 1rem 0;
 }
 
+article article > :first-child {
+  flex: 0 1 300px;
+  text-align: right;
+  margin: 0;
+  margin-right: .5em;
+}
 
 article article .gradient {
+  flex: 0 0 200px;
   height: 200px; 
   width: 200px;
-  margin: .6em;
 }
 
-.box-heading {
+article article code {
   border: .1px solid grey;
   background-color: #eee;
   padding: .5rem;
@@ -72,27 +112,4 @@ article article .gradient {
   text-align: left; 
 }
 
-.box-text {
-  margin: .6em;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left; 
-}
-// How to use
-// ----------
-.gradient.fill {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.5;
-}
-
-
-// so that the margin on stuff is included in the background when they add to
-// the <article>
-body > .gradient {
-  overflow: hidden;
-}
 
