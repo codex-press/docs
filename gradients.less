@@ -2,7 +2,7 @@
 @import 'fx.less';
 
 html body {
-  padding: 0 1rem;
+  padding: 0 1rem 3rem 1rem;
 }
 
 body header {
@@ -11,6 +11,7 @@ body header {
 
 main {
   width: 60%;
+  padding-right: 1rem;
 }
 
 .fixer {
@@ -20,15 +21,63 @@ main {
   right: 16px;
 }
 
-.fixer .target.fixed {
-  position: fixed;
-  width: 40%;
-  top: 16px;
-  right: 16px;
+// both the fixer and the image get a shim
+.fixer:before,
+.target.image:before {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 66.6%;
 }
 
-.target { 
+.image {
+  background: url(https://usercontent.codex.press/images/b0eac30f-e568-4047-90bd-7d6942ad3a8f/low.jpg?1461449268);
+  background-size: cover;
+}
+
+.target.image {
+  position: absolute;
+  width: 100%;
+  top: 0;
   overflow: hidden;
+}
+
+// when it gets fixed it
+.fixer .target.fixed {
+  width: 40%;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+}
+
+@mobile: ~'(max-width: 700px)';
+@media @mobile {
+  .fixer {
+    position: relative;
+    float: right;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    top: initial;
+    right: initial;
+    width: 100%;
+  }
+  .fixer .target.fixed {
+    width: calc(100% - 2rem);
+    top: 0;
+    right: 1rem;
+    left: 1rem;
+  }
+  main {
+    width: 100%;
+  }
+}
+
+
+
+// since it will be moving over things
+.target .gradient { 
+  pointer-events: none;
 }
 
 .target .result { 
@@ -43,13 +92,20 @@ main {
 
 
 .name-picker,
+.blend-picker,
 .rotation-picker {
   display: flex;
   flex-flow: row wrap;
+  margin-left: -1rem;
+  @media @mobile {
+    margin-right: -2rem;
+  }
 }
 
 .name-picker .gradient,
+.blend-picker .image,
 .rotation-picker .gradient {
+  max-width: calc(50% - 2rem);
   width: 200px;
   height: 200px;
   margin: 1rem;
@@ -59,6 +115,21 @@ main {
   justify-content: center;
   text-align: center;
   color: white;
+}
+
+
+.blend-picker .image {
+  position: relative;
+}
+.blend-picker .gradient {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.blend-picker code {
+  position: relative;
 }
 
 .rotation-picker .gradient {
@@ -77,4 +148,7 @@ main {
   font-size: 2em;
 }
 
+button {
+  margin-left: 0;
+}
 

@@ -57,7 +57,7 @@ nav.docs-nav .reveal {
 }
 
 
-@media @narrow {
+.collapsed() {
 
   nav.docs-nav {
     position: relative;
@@ -95,3 +95,11 @@ nav.docs-nav .reveal {
 
 }
 
+
+@media @narrow {
+  .collapsed();
+}
+
+article.collapsed-nav {
+  .collapsed();
+}

@@ -1,4 +1,4 @@
-import prism from 'prismjs';
+// import prism from 'prismjs';
 import article from 'article';
 import Plugin from 'plugin';
 import dom from 'dom';
@@ -6,16 +6,15 @@ import dom from 'dom';
 let j = array => array.join(' ');
 let s = string => string.split(' ');
 
-let names = s('warm cold violet blue pinklimo delta bravo gore sunny bublegum flood toxic-dew tomato fifties old-film color-rings rainbow rainbow-flag');
+let names = s('warm cold violet blue pinklimo delta bravo gore sunny bubblegum flood toxic-dew tomato fifties old-film color-rings rainbow rainbow-flag');
 
 let rotations = ['', ...s('rotate-45 rotate-90 rotate-135 rotate-180 rotate-225 rotate-270 rotate-315')];
 
 let blends = ['', 'translucent', ...s('multiply screen overlay darken lighten dodge burn hard soft difference exclusion hue saturation color luminosity').map(b => `blend-${b}`)];
 
-let animations = s('revolve revolve-reverse pan pan-vertical');
+let animations = s(' revolve revolve-reverse pan pan-vertical pan-continuous');
 
 let durations = s('fast slow slower');
-
 
 article.ready.then(() => {
   let orNone = n => n ? `.${n}` : 'none';
@@ -33,9 +32,10 @@ article.ready.then(() => {
   ));
 
   dom.first('.blend-picker').innerHTML = j(blends.map((n,i) =>
-    `<button data-value="${n}">
+    `<div data-value="${n}" class=image>
+      <div class="warm gradient ${n}"></div>
       <code>${orNone(n)}</code>
-    </button>`
+    </div>`
   ));
 
   let animationHTML = `
@@ -69,7 +69,7 @@ article.ready.then(() => {
   let update = () => {
     let classes = `fill ${name} gradient ${rotation} ${blend} ${duration} ${animation}`;
     gradient.className = classes;
-    dom('.target .result').text(classes);
+    dom.first('.target .result').innerHTML = classes.replace(/\s+/g, '<br>');
   };
 
   update();
@@ -79,8 +79,9 @@ article.ready.then(() => {
     'click .name-picker .gradient': e => {
       name = dom(e.target).closestW('.gradient').data('value');
       update();
-      // also set it in rotation picker
+      // also set it in rotation and blend pickers
       dom('.rotation-picker .gradient').removeClass(...names).addClass(name);
+      dom('.blend-picker .gradient').removeClass(...names).addClass(name);
     },
 
 
@@ -90,14 +91,14 @@ article.ready.then(() => {
     },
 
 
-    'click .blend-picker button': e => {
-      blend = dom(e.target).closestW('button').data('value');
+    'click .blend-picker .image': e => {
+      blend = dom(e.target).closestW('.image').data('value');
       update();
     },
 
 
     'click .animation-picker button': e => {
-      animation = dom(e.target).closestW('button').data('value');
+      animation = dom(e.target).closestW('[data-value]').data('value');
       update();
     },
 
@@ -124,7 +125,6 @@ article.ready.then(() => {
   });
 
 });
-
 
 
 article.register('.fixer', class Scroller extends Plugin {
