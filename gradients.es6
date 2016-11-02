@@ -6,7 +6,7 @@ import dom from 'dom';
 let j = array => array.join(' ');
 let s = string => string.split(' ');
 
-let names = s('warm cold violet blue pinklimo delta bravo gore sunny bublegum flood toxic-dew tomato fifties old-film color-rings');
+let names = s('warm cold violet blue pinklimo delta bravo gore sunny bublegum flood toxic-dew tomato fifties old-film color-rings rainbow rainbow-flag');
 
 let rotations = ['', ...s('rotate-45 rotate-90 rotate-135 rotate-180 rotate-225 rotate-270 rotate-315')];
 
