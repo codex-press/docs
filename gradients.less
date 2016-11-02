@@ -1,135 +1,79 @@
 @import 'variables.less';
 @import 'fx.less';
 
-// Rotate Classes
-// --------------
-
-.rotate-demo {
-  display: flex;
-  flex-flow: row wrap;
+html body {
+  padding: 0 1rem;
 }
 
-.rotate-demo > div {
-  flex: 1 1 300px;
+body header {
+  margin: 0 -1rem;
 }
 
-.rotate-demo .gradient {
-  height: 100px; 
-  width: 100px;
+main {
+  width: 60%;
 }
 
+.fixer {
+  width: 40%;
+  position: absolute; 
+  overflow: hidden;
+  right: 16px;
+}
 
-div.image-demo {
-  max-width: @textWidth !important;
+.fixer .target.fixed {
+  position: fixed;
+  width: 40%;
+  top: 16px;
+  right: 16px;
+}
+
+.target { 
+  overflow: hidden;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 2em;
 }
 
-div.image-demo .words {
-  font-size: 3em;
-  font-weight: 900;
-  color: white;
-  line-height: 1;
-  margin: 0;
-  font-family: @monospace;
-}
-
-
-// Animation
-// ---------
-
-.animation-controls .overflow-checkbox {
-  cursor: pointer;
-  user-select: none;
-}
-
-.animation-controls button {
-  display: inline-block;
-}
-
-.animate-demo .row  {
-  flex-flow: row wrap;
-}
-
-.animate-demo .row p {
-  flex: 0 0 400px;
-  margin: 1rem 0;
-}
-
-.animate-demo .gradient-parent {
-  flex: 0 0 auto;
-  width: 200px;
-  height: 200px;
-  margin-top: 1rem;
-}
-
-
-// this shows layered animation
-
-.animate-demo-two {
-  max-width: @textWidth;
-  height: 20em;;
-  position: relative;
-  overflow: hidden;
+.target .result { 
   color: white;
   text-align: center;
+  width: 100%;
+}
+
+
+.name-picker,
+.rotation-picker {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.name-picker .gradient,
+.rotation-picker .gradient {
+  width: 200px;
+  height: 200px;
+  margin: 1rem;
+  cursor: pointer;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.animate-demo-two .words {
-  max-width: initial;
-  position: relative;
+.rotation-picker .gradient {
+  width: 200px;
+  height: 200px;
+  margin: 1rem;
+  cursor: pointer;
 }
 
-.animate-demo-two .words code {
-  background: none;
-}
 
+.overflow-checkbox {
+  cursor: pointer;
+}
 
 .gradient.text {
   font-size: 2em;
-  text-align: center;
-}
-
-
-
-article article {
-  display: flex;
-  flex-flow: row nowrap;
-  // padding: 1.2em;
-  // border-bottom: 1px solid hsl(30, 100%, 50%);
-  margin: 1rem 0;
-}
-
-article article > :first-child {
-  flex: 0 1 300px;
-  text-align: right;
-  margin: 0;
-  margin-right: .5em;
-}
-
-article article .gradient {
-  flex: 0 0 200px;
-  height: 200px; 
-  width: 200px;
-}
-
-article article code {
-  border: .1px solid grey;
-  background-color: #eee;
-  padding: .5rem;
-  color: crimson;
-  vertical-align: top;
-  border-radius: .5em;
-  font-family: monospace;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left; 
 }
 
 
