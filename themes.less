@@ -14,7 +14,7 @@ svg.bird {
   padding: 2rem;
 }
 
-.swatches {
+.chooser {
   clear: both;
   display: flex;
   flex-flow: row nowrap;
@@ -23,7 +23,7 @@ svg.bird {
 .swatch {
   position: relative;
   flex: 1 1 auto;
-  margin: 2rem;
+  margin: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
   font-family: inherit !important;
@@ -56,8 +56,8 @@ svg.bird {
   padding-bottom: 0;
   overflow: hidden;
 
-  p:first-child { margin-top: -2.2em; }
-  p:last-child { margin-bottom: -2.2em; }
+  p:first-child { margin-top: -2.2em !important; }
+  p:last-child { margin-bottom: -2.2em !important; }
 }
 
 figure {
@@ -73,8 +73,21 @@ figure img {
 }
 
 .box-figcaption figure {
+  margin: 0 !important;
   margin-top: -50% !important;
 }
+.box-figcaption img {
+  margin: 0;
+}
+.box-figcaption figure .frame {
+  position: relative;
+}
+.box-figcaption figure .bottom.right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 
 .scoped figcaption {
   padding: 0;

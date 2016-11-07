@@ -1,0 +1,2 @@
+import './index.es6';
+

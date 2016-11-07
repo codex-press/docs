@@ -5,7 +5,7 @@
 </p>
 <h1 align=center>Codex Press Documentation</h1>
 
-This repository contains the Javascript and CSS for [documentation] of the [Codex Press] publishing platform. The documenation includes a generous amount of Javascript to power class name and CSS generators for users of the site. This itself can serve as a guide to the best practices for writing Javascript on the platform. The JS files are '.es6' which signals to the platform that they should be transpiled using Babel and Browserify, by the server or using the [Codex development server].
+This repository contains the Javascript and CSS for [documentation] of the [Codex Press] publishing platform. The documenation includes a generous amount of Javascript to power class name and CSS generators for users of the site. The JS files are '.es6' which signals to the platform that they should be transpiled using Babel and Browserify, by the server or using the [Codex development server].
 
 [Codex Press]: https://codex.press/
 [documentation]: https://codex.press/docs
