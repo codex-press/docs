@@ -1,5 +1,9 @@
 @import 'variables.less';
 
+html body {
+  padding-bottom: 0;
+}
+
 #docs {
   overflow: hidden;
   font-family: @ingra;
@@ -15,7 +19,8 @@
   @import 'index.less';
 }
 
-.scoped {
+article > .scoped {
   overflow: hidden;
+  padding-bottom: 4rem;
 }
 
