@@ -8,7 +8,7 @@ let swatches = {
   pigeon: s('inverted taxi'),
   raven: s('celtic coldshoulder ebony goldrush inverted'),
   toucan: [],
-  heron: s('greenland cherry cyan'),
+  heron: s('lemon cherry cyan'),
 };
 
 let swatchTemplater = (theme, swatches) => swatches.map(s => {
