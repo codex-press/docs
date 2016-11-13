@@ -1,11 +1,9 @@
 @import (less) 'node_modules/prismjs/themes/prism.css';
 @import 'variables.less';
+@import 'common.less';
 @import 'nav.less';
 
 body {
-  font-family: @ingra;
-  color: @textColor;
-  background: white;
   padding: 0 1rem 3rem @navWidth;
 }
 
@@ -22,12 +20,6 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: @museo;
-  max-width: @textWidth;
-  margin: 1rem 0;
-}
-
 h1 { 
   font-weight: 400;
   font-size: 2.5em;
@@ -41,16 +33,6 @@ h3 {
   background-color: @headerGreen;
   margin: 3rem -1rem 1rem;
   padding: 0.5rem 1rem;
-}
-
-
-p {
-  max-width: @textWidth;
-  line-height: 1.4;
-}
-
-.text-width {
-  max-width: @textWidth;
 }
 
 figure {
@@ -97,30 +79,6 @@ abbr {
   font-size: 0.95em;
 }
 
-button {
-  font-size: 0.8em;
-  display: block;
-  padding: 0.8em;
-  margin: 0.5em;
-  border-radius: 0.2em;
-  border: 1px solid;
-  text-align: center;
-  background: #eee;
-  outline: none;
-  cursor: pointer;
-  user-select: none;
-}
-
-button:hover {
-  background: #999;
-}
-
-button.selected {
-  color: white;
-  background-color: hsl(152, 100%, 40%);
-  border: 1px solid hsla(152, 100%, 20%, 1);
-}
-
 
 
 
@@ -159,6 +117,7 @@ pre {
   white-space: pre-wrap !important;
   max-width: @textWidth;
 }
+
 
 
 // Table
@@ -257,6 +216,64 @@ html[data-url="/docs/themes"] {
   figure, table, blockquote, .text-width, pre, p, h1, h2, h3, h4, h5, h6 {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+}
+
+
+html[data-url="/docs/images"] {
+
+  .image-desktop {
+    background-position: 0 0;
+  }
+
+  .image-mobile {
+    width: 40%;
+  }
+
+  .image-nyt {
+    background-position: 0 0;
+  }
+
+}
+
+
+html[data-url="/docs/quick-start"] {
+
+  textarea {
+    height: 8em;
+    width: 100%;
+    resize: none;
+    max-width: @textWidth;
+    outline: none;
+    overflow: hidden;
+  }
+
+  .textarea-controls {
+    margin-top: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  .textarea-controls button.copy {
+    font-size: 0.8em;
+    display: block;
+    padding: 0.8em;
+    border-radius: 0.2em;
+    border: 1px solid;
+    text-align: center;
+    background: #eee;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+  }
+
+  .textarea-controls .message {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: transform 0.5s, opacity 0.5s;
+    margin-left: 1rem;
   }
 
 }

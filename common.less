@@ -1,0 +1,47 @@
+@import 'variables.less';
+
+body {
+  font-family: @ingra;
+  color: @textColor;
+  background: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @museo;
+  max-width: @textWidth;
+  margin: 1rem 0;
+}
+
+p {
+  max-width: @textWidth;
+  line-height: 1.4;
+}
+
+.text-width {
+  max-width: @textWidth;
+}
+
+button {
+  font-size: 0.8em;
+  display: block;
+  padding: 0.8em;
+  margin: 0.5em;
+  border-radius: 0.2em;
+  border: 1px solid;
+  text-align: center;
+  background: #eee;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+button:hover {
+  background: #999;
+}
+
+button.selected {
+  color: white;
+  background-color: hsl(152, 100%, 40%);
+  border: 1px solid hsla(152, 100%, 20%, 1);
+}
+

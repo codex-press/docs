@@ -1,13 +1,29 @@
-@import 'variables.less';
-@import 'variables.less';
+@import (less) '../node_modules/prismjs/themes/prism.css';
+@import '../variables.less';
+@import '../common.less';
+@import './nav.less';
+
+body {
+  font-family: @ingra;
+}
+
+p {
+  margin: 1rem auto;
+}
+
+h2,
+h3,
+.text-width {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 header {
   color: #eee;
   background-color: hsl(200, 80%, 10%); 
   font-size: 2em; 
   text-align: center;
-  margin-left: -270px;
-  margin-right: -1rem;
+  margin: 0 -1rem 1rem;
   padding-top: 2em;
   overflow: hidden;
 }
@@ -57,7 +73,8 @@ header h1:before {
   -webkit-text-fill-color: transparent;
 }
 
-header h2 {
+header h1 + p {
+  max-width: initial;
   position: relative;
   text-align: center;
   margin: 2rem auto;
@@ -68,5 +85,41 @@ header h2 {
     hsla(0, 80%, 50%, 1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.full-width {
+  width: 100vw !important;
+  max-width: initial;
+  margin-left: -270px;
+  margin-right: -1rem;
+}
+
+@media @narrow {
+  .full-width {
+    margin: 0 -1rem !important;
+  }
+}
+
+
+html[data-url="/docs/fx/dimmer"] {
+
+  body {
+    padding-bottom: 20vh;
+  }
+
+  .spacer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 50vh;
+    font-weight: bold;
+  }
+
+  .dimmer.full-width {
+    border-left: none;
+    margin-bottom: 20vh;
+    max-height: 80vh;
+  }
+
 }
 

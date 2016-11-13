@@ -1,0 +1,44 @@
+
+nav.docs {
+  font-size: 16px;
+  padding: 1em;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: inherit
+  }
+
+  svg {
+    vertical-align: middle;
+    fill: currentColor;
+  }
+
+  .container > a {
+    margin: 0 0.9rem;
+    font-size: 24px;
+  }
+
+  div.reveal {
+    display: none;
+  }
+
+  div.section,
+  div.internal {
+    display: none;
+  }
+
+  a[href="/docs/fx"] {
+    color: hsl(0, 80%, 50%);
+  }
+
+  a[href="/docs/fx"] + div.section {
+    display: block;
+  }
+
+  div.section a {
+    margin: 0 0.2rem;
+  }
+
+}
+

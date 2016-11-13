@@ -1,8 +1,4 @@
-@import 'variables.less';
-
-h2 {
-
-}
+@import '../variables.less';
 
 p.name {
   text-align: center;
@@ -14,6 +10,12 @@ body svg.fleuron {
   margin-top: 0;
 }
 
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
 
 .example-bike {
 
@@ -42,39 +44,36 @@ pre.language-css {
   margin: 0;
 }
 
-body article {
 
-  article {
-    display: flex;
-    flex: row nowrap;
-    justify-content: center;
-    margin: 3rem 0;
-  }
+article {
+  display: flex;
+  flex: row nowrap;
+  justify-content: center;
+  margin: 3rem 0;
+}
 
-  article > :last-child {
-    width: 300px;
-  }
+article > :last-child {
+  width: 300px;
+}
 
-  svg.fleuron {
-    width: 200px;
-    margin: 1rem;
-  }
+svg.fleuron {
+  width: 200px;
+  margin: 1rem;
+}
 
-  h4 {
+h4 {
 
-  }
+}
 
-  .variation {
-    cursor: pointer;
-    font-family: @monospace;
-    font-weight: 800;
-    color: #777;
-    margin: 0;
-  }
+.variation {
+  cursor: pointer;
+  font-family: @monospace;
+  font-weight: 800;
+  color: #777;
+  margin: 0;
+}
 
-  .variation:hover {
-    color: crimson;
-  }
-
+.variation:hover {
+  color: crimson;
 }
 

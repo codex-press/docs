@@ -1,107 +1,115 @@
 @import 'variables.less';
 
-nav.docs-nav {
-  position: absolute;
-  left: 0;
-  width: 250px;
-  font-family: museo-sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 1rem;
-}
+nav.docs {
 
-nav.docs-nav > a {
-  display: block;
-  margin-top: 1.5rem;
-  font-size: 1.2em;
-}
-
-nav.docs-nav ul {
-  width: 100%;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav.docs-nav ul ul {
-  padding-left: 0.5rem;
-}
-
-nav.docs-nav li {
-  margin: 0;
-}
-
-nav.docs-nav > ul > li {
-  margin-top: 0.3em;
-}
-
-nav.docs-nav ul ul {
-  font-weight: 300;
-}
-
-nav.docs-nav a {
-  text-decoration: none;
-  color: #555;
-}
-
-nav.docs-nav ul ul a {
-  color: #888;
-}
-
-nav.docs-nav a:hover {
-  color: @textColor;
-}
-
-
-// reveal for mobile
-nav.docs-nav .reveal {
-  display: none;
-}
-
-
-.collapsed() {
-
-  nav.docs-nav {
-    position: relative;
-    font-size: 1.2em;
-    margin: 1rem 0;
+  & {
+    position: fixed;
+    width: 200px;
+    left: 10px;
+    top: 10px;
+    font-size: 16px;
+    padding: 1em;
+    background-color: hsl(152, 100%, 45%);
+    color: white;
   }
 
-  nav.docs-nav .links {
-    height: 0;
-    transition: height 0.3s ease-out;
-    overflow: hidden;
+  svg {
+    fill: currentColor;
   }
 
-  nav.docs-nav.expanded .links {
-    height: auto;
-  }
-
-  nav.docs-nav .reveal {
+  a {
     display: block;
+    color: white;
+    text-decoration: none;
+    outline: none;
+  }
+
+  // section headings: Editor, Themes, Effects
+  .container > a {
     font-size: 1.3em;
-    user-select: none;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
   }
 
-  nav.docs-nav .reveal svg {
-    vertical-align: middle;
-    position: relative;
-    top: -0.1em;
-    transform: rotate(90deg);
-    transition: transform 0.3s ease-out;
+  // when the link is active it's section or internal links are shown
+  a.active + div.section,
+  a.active + div.internal {
+    display: block;
   }
 
-  nav.docs-nav.expanded .reveal svg {
-    transform: none;
+  div.section a.active {
+    border-left: 2px solid white;
   }
 
-}
+  div.section {
+    display: none;
+    margin-bottom: 1em;
+  }
+
+  // internal to one section, i.e. for Editor: Quick Start, Text, Images
+  div.section > a {
+    padding-left: 0.5em;
+    border-left: 2px solid transparent;
+  }
+
+  div.internal {
+    display: none;
+    // just for the break in the line
+    margin-top: 2px;
+    margin-bottom: 0.3em;
+  }
+
+  div.internal a {
+    padding-left: 1em;
+    font-size: 0.85em;
+    border-left: 2px solid transparent;
+  }
+ 
 
 
-@media @narrow {
-  .collapsed();
+
+  // reveal for mobile
+  .reveal {
+    display: none;
+  }
+
+  @media @narrow {
+
+    & {
+      position: relative;
+      font-size: 1.2em;
+      margin: 1rem 0;
+    }
+
+    .container {
+      height: 0;
+      transition: height 0.3s ease-out;
+      overflow: hidden;
+    }
+
+    &.expanded .container {
+      height: auto;
+    }
+
+    .reveal {
+      display: block;
+      font-size: 1.3em;
+      user-select: none;
+      cursor: pointer;
+      margin-bottom: 0.5rem;
+    }
+
+    .reveal svg {
+      vertical-align: middle;
+      position: relative;
+      top: -0.1em;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease-out;
+    }
+
+    &.expanded .reveal svg {
+      transform: none;
+    }
+
+  }
+  
 }
 
-.collapsed-nav {
-  .collapsed();
-}
