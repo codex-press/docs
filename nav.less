@@ -9,8 +9,11 @@ nav.docs {
     top: 10px;
     font-size: 16px;
     padding: 1em;
-    background-color: hsl(152, 100%, 45%);
-    color: white;
+    color: #333;
+
+    // help me, David :(
+    background-color: hsla(152, 100%, 45%, 1);
+    color: hsla(152, 100%, 96%, 1);
   }
 
   svg {
@@ -19,7 +22,7 @@ nav.docs {
 
   a {
     display: block;
-    color: white;
+    color: inherit;
     text-decoration: none;
     outline: none;
   }
@@ -36,7 +39,7 @@ nav.docs {
   }
 
   div.section a.active {
-    border-left: 2px solid white;
+    border-left: 2px solid currentColor;
   }
 
   div.section {

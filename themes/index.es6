@@ -21,7 +21,6 @@ let swatchTemplater = (theme, swatches) => swatches.map(s => {
 article.ready.then(() => {
   let theme = article.attrs.url.slice('/docs/themes/'.length);
 
-  console.log(theme, dom('div.scoped'));
   dom('div.scoped:not(.swatch)').addClass(theme);
   if (dom(document.documentElement).is('.dev-server'))
     setTimeout(() => dom('div.scoped:not(.swatch)').addClass(theme),1000);
