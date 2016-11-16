@@ -27,9 +27,13 @@ setTimeout(setActive, 2000);
 
 // this ads .active class to the link that the reader has scrolled onto
 article.on('scroll', () => {
-  let id = dom('[id]').reverse().find(el => dom(el).rect().top < window.innerHeight/2).id
+  let el = dom('[id]').reverse().find(el => {
+    return dom(el).rect().top < window.innerHeight/2;
+  });
+  if (!el)
+    return;
   dom(`a[href^="${article.attrs.url}#"]`).removeClass('active');
-  dom(`a[href="${article.attrs.url}#${id}"]`).addClass('active');
+  dom(`a[href="${article.attrs.url}#${el.id}"]`).addClass('active');
 });
 
 

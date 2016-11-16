@@ -44,7 +44,7 @@ nav.docs {
 
   div.section {
     display: none;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
 
   // internal to one section, i.e. for Editor: Quick Start, Text, Images
@@ -77,9 +77,12 @@ nav.docs {
   @media @narrow {
 
     & {
+      left: initial;
+      top: initial;
       position: relative;
       font-size: 1.2em;
-      margin: 1rem 0;
+      margin: 0 -1rem;
+      width: initial;
     }
 
     .container {
@@ -97,7 +100,6 @@ nav.docs {
       font-size: 1.3em;
       user-select: none;
       cursor: pointer;
-      margin-bottom: 0.5rem;
     }
 
     .reveal svg {
@@ -110,6 +112,10 @@ nav.docs {
 
     &.expanded .reveal svg {
       transform: none;
+    }
+
+    .container svg {
+      margin-top: 0.5rem;
     }
 
   }

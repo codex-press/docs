@@ -112,10 +112,16 @@ main {
   color: white;
 }
 
+button code,
+.blend-picker code,
+.gradient code {
+  background: none;
+}
 
 .blend-picker .image {
   position: relative;
 }
+
 .blend-picker .gradient {
   position: absolute;
   top: 0;
@@ -123,6 +129,7 @@ main {
   bottom: 0;
   left: 0;
 }
+
 .blend-picker code {
   position: relative;
 }
@@ -145,5 +152,12 @@ main {
 
 button {
   margin-left: 0;
+}
+
+.layered-background-demo p {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 1;
 }
 

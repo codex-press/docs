@@ -4,12 +4,12 @@
 @import 'nav.less';
 
 body {
-  padding: 0 1rem 3rem @navWidth;
+  padding: 0 1rem 5rem @navWidth;
 }
 
 @media @narrow {
   body {
-    padding: 0 1rem;
+    padding: 0 1rem 5rem;
   }
 }
 
@@ -55,31 +55,6 @@ figcaption {
 
 
 
-// Inline
-// ------
-
-a {
-  color: @linkGreen;
-}
-
-a:hover,
-a:visited {
-  color: @linkVisitedGreen;
-}
-
-p code {
-  font-family: @monospace;
-  background-color: #ddd;
-  padding: 0.1em 0.35em;
-  font-size: 0.95em;
-  border-radius: 0.25em;
-}
-
-abbr {
-  font-size: 0.95em;
-}
-
-
 
 
 
@@ -94,28 +69,11 @@ aside.sidebar {
   border-bottom: 1px solid #888;
 }
 
-ul, ol, table {
-  max-width: @textWidth;
-}
-
-ul, ol {
-  padding-left: 3rem;
-}
-
-li {
-  margin: 0.5rem 0;
-}
-
 blockquote {
   max-width: @textWidth;
   margin: 1rem 0;
   padding-left: 2rem;
   border-left: 3px solid @headerGreen;
-}
-
-pre {
-  white-space: pre-wrap !important;
-  max-width: @textWidth;
 }
 
 
@@ -133,6 +91,11 @@ table td:first-child {
 }
 
 
+.right {
+  width: (@textWidth / 2);
+  float: right;
+  clear: both;
+}
 
 
 
@@ -213,7 +176,7 @@ html[data-url="/docs/themes"] {
     font-size: 2rem;
   }
 
-  figure, table, blockquote, .text-width, pre, p, h1, h2, h3, h4, h5, h6 {
+  figure, table, blockquote, .text-width, pre, p, h1, h2, h3, h4, h5, h6, ul, ol {
     margin-left: auto !important;
     margin-right: auto !important;
   }

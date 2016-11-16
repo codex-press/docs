@@ -17,8 +17,57 @@ p {
   line-height: 1.4;
 }
 
+figure {
+  margin: 1rem 0;
+}
+
 .text-width {
   max-width: @textWidth;
+}
+
+ul, ol, table {
+  max-width: @textWidth;
+}
+
+ul, ol {
+  padding-left: 2rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+pre {
+  white-space: pre-wrap !important;
+  max-width: @textWidth;
+}
+
+
+// Inline
+// ------
+
+a {
+  color: @linkGreen;
+}
+
+a:hover,
+a:visited {
+  color: @linkVisitedGreen;
+}
+
+code {
+  font-family: @monospace;
+}
+
+:not(pre) > code {
+  background-color: #ddd;
+  padding: 0.1em 0.35em;
+  font-size: 0.95em;
+  border-radius: 0.25em;
+}
+
+abbr {
+  font-size: 0.88em;
 }
 
 button {
