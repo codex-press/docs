@@ -12,15 +12,45 @@ code {
   margin: 1em auto;
 }
 
+.big {
+  font-size: 1.5em;
+  padding-top: 0.8em !important;
+}
+
+.flex {
+  // remove me
+  max-width: 951px;
+  margin: 1em auto !important;
+  // end remove
+
+  background: #f9f9f9;
+}
+
 .flex p {
-  background: #eee;
+  background: #ddd;
   padding: 0.3em 0;
-  margin: 0.5rem !important;
+//  margin: 0.5rem !important;
   text-align: center;
   max-width: initial;
 }
+
+.flex .flex {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  background-color: #ddd;
+}
+
+.flex .flex p {
+  background-color: #aaa;
+}
+
 .flex p:before {
   content: "\00a0";
 }
+
+.flex p.yellow       { background-color: #f6da74; }
+.flex p.green-yellow { background-color: #abcd58; }
+.flex p.green        { background-color: #639a50; }
+.flex p.blue         { background-color: #3b7fa7; }
 
 
