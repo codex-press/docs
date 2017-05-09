@@ -1,7 +1,7 @@
-import article from 'article';
-import animate from 'animate';
-import dom from 'dom';
-import {goldenRatio} from 'utility';
+import article from '/app/article.js';
+import animate from '/app/animate.js';
+import dom from '/app/dom.js';
+import { goldenRatio } from '/app/utility.js';
   
 dom.ready.then(() => {
 

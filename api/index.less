@@ -1,60 +1,143 @@
 @import (inline) '../node_modules/prismjs/themes/prism.css';
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,800';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
 
-body {
+html {
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
 }
 
 
-section {
-  width: 100%;
-  display: flex;
-  flex-flow: row nowrap;
+a {
+  color: #999;
 }
 
-section > pre {
-  flex: 0 0 auto;
-  width: 50%;
-  margin: 0 !important;
+a:visited,
+a:hover {
+  color: #555;
+}
+
+section {
+}
+
+div.code {
+  max-width: 50rem;
+  transition: height 0.3s ease-out;
 }
 
 div.comment {
-  flex: 0 0 auto;
-  width: 50%;
-  padding: 1em;
+  margin-top: 2em;
+  max-width: 50rem;
 }
-
-section:first-child > pre {
-  display: none;
-}
-section:first-child div.comment {
-  width: 100%;
-}
-
 
 div.comment p code {
   padding: 0.1em 0.3em;
-  border-radius: 0.2em;
+  border-radius: 0.1em;
+  background-color: #f5f2f0;
 }
 
 div.comment pre {
-  margin: 0 2em;
+  margin: 0 auto;
   border-radius: 0.1em;
   padding: 0.2em;
 }
 
 
-h1, h2 {
+h1 {
+  font-size: 2em;
   margin: 0;
 }
 
-h1 {
+h2 {
+  margin: 2em 0 1em;
   font-size: 1.5em;
 }
 
-h2 {
-  font-size: 1.3em;
+h3 {
+  font-size: 1.15em;
+  font-weight: 700;
+  margin: 1em 0 0.5em;
+}
+
+h3 code {
+  font-family: Courier New, Courier, monospace;
+  font-weight: normal;
+  margin-left: 3em;
+}
+
+
+span.show-code {
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+  user-select: none;
+}
+
+span.show-code .arrow {
+  fill: currentColor;
+  vertical-align: middle;
+  transition: transform 0.3s ease-out;
+}
+
+span.show-code:not(.expanded) .arrow {
+  transform: rotate(90deg);
+}
+
+
+html.javascript {
+
+  @media (min-width: 60rem) {
+    body {
+      padding-left: 15rem;
+    }
+  }
+
+  div.code {
+    height: 0;
+    overflow: hidden;
+  }
+
+  nav.outline {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 13rem;
+    padding: 0 0.3rem 2rem;
+
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .level1 {
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+
+    .level2 {
+      font-weight: 400;
+      font-size: 1.1em;
+      margin-left: 0.3rem;
+      margin-top: 1rem;
+    }
+
+    .level3 {
+      font-weight: 300;
+      font-size: 0.9em;
+      margin-left: 0.6rem;
+    }
+
+  }
+
+  @media (max-width: 60rem) {
+    nav.outline {
+      display: none;
+    }
+  }
+
 }
 
 

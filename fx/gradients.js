@@ -1,7 +1,6 @@
-// import prism from 'prismjs';
-import article from 'article';
-import Plugin from 'plugin';
-import dom from 'dom';
+import article from '/app/article.js';
+import Plugin from '/app/plugin.js';
+import dom from '/app/dom.js';
 
 let j = array => array.join(' ');
 let s = string => string.split(' ');

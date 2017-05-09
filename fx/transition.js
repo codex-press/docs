@@ -1,6 +1,6 @@
 import prism from 'prismjs';
-import article from 'article';
-import dom from 'dom';
+import article from '/app/article.js';
+import dom from '/app/dom.js';
 
 let text = [
   'Come sleep with me: We won\'t make Love, Love will make us.',

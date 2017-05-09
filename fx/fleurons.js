@@ -1,4 +1,4 @@
-import dom from 'dom';
+import dom from '/app/dom.js';
 
 let stroke = 'crimson';
 let fill = 'crimson';
