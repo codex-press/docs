@@ -1,2 +1,2 @@
-import '../index.es6';
+import '../index';
 

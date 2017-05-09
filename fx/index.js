@@ -1,6 +1,6 @@
 import '../nav';
 
-import {typekit} from 'utility';
+import { typekit } from '/app/utility.js';
 
 typekit({kitId: 'nnh8ewu'});
 
