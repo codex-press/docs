@@ -1,4 +1,4 @@
-import '../nav';
+import '../nav.js';
 
 import { typekit } from '/app/utility.js';
 

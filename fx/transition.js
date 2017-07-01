@@ -1,4 +1,4 @@
-import prism from 'prismjs';
+import prism from '/docs/node_modules/prismjs.js';
 import article from '/app/article.js';
 import dom from '/app/dom.js';
 

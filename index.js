@@ -3,7 +3,7 @@ import dom from '/app/dom.js';
 import article from '/app/article.js';
 import Plugin from '/app/plugin.js';
 
-import './nav';
+import './nav.js';
 
 typekit({kitId: 'nnh8ewu'});
 
