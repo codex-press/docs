@@ -1,5 +1,4 @@
-import article from '/app/article.js';
-import dom from '/app/dom.js';
+import { dom, article } from '/app/index.js';
 
 let s = string => string.split(' ');
 

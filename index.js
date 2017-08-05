@@ -1,7 +1,5 @@
-import { typekit } from '/app/utility.js';
-import dom from '/app/dom.js';
-import article from '/app/article.js';
-import Plugin from '/app/plugin.js';
+import { typekit } from '/app/src/utility.js';
+import { dom, article, Plugin } from '/app/index.js';
 
 import './nav.js';
 

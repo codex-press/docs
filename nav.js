@@ -1,4 +1,4 @@
-import dom from '/app/dom.js';
+import { dom } from '/app/index.js';
 
 dom(window).delegate('click', 'nav.docs .reveal', e => {
 

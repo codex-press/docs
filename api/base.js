@@ -1,6 +1,4 @@
-import dom from '/app/dom.js';
-import article from '/app/article.js';
-import * as env from '/app/env.js';
+import { dom, article, env } from '/app/index.js';
 
 let toggleHTML = `
 <span class=show-code>Show source code 

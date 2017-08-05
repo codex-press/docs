@@ -1,8 +1,6 @@
-import article from '/app/article.js';
-import animate from '/app/animate.js';
-import dom from '/app/dom.js';
-import { goldenRatio } from '/app/utility.js';
-  
+import { dom, animate, article } from '/app/index.js';
+
+
 dom.ready.then(() => {
 
   // create structure
