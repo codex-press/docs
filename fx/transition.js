@@ -1,4 +1,4 @@
-import prism from '../lib/prismjs.js';
+import prism from '../lib/prism.js';
 import { dom, article } from '/app/index.js';
 
 let text = [
