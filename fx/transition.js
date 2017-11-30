@@ -214,10 +214,10 @@ function renderCSS() {
   }
 
   let code = (`
-${selector} {
+${ selector } {
   ${ propsOffscreen }
 }
-${selector}.onscreen {
+${ selector }.onscreen {
   ${ propsOnscreen }
   transition-property: ${ props };
   transition-timing-function: ${ timing };
@@ -230,10 +230,10 @@ ${selector}.onscreen {
   dom.first('.result-css').innerHTML = code;
 
   let shorthand = (`
-${selector} {
+${ selector } {
   ${ propsOffscreen }
 }
-${selector}.onscreen {
+${ selector }.onscreen {
   ${ propsOnscreen }
   transition: ${ shorthandTransition };
 }`);

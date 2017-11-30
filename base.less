@@ -47,22 +47,6 @@ figcaption {
   padding: 0.5rem 0 0.5rem 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 aside.sidebar {
   max-width: @textWidth;
   border-top: 1px solid #888;
@@ -76,6 +60,12 @@ blockquote {
   border-left: 3px solid @headerGreen;
 }
 
+.right {
+  width: (@textWidth / 2);
+  float: right;
+  clear: both;
+  margin-left: 1rem;
+}
 
 
 // Table
@@ -90,12 +80,6 @@ table td:first-child {
   padding-right: 1rem;
 }
 
-
-.right {
-  width: (@textWidth / 2);
-  float: right;
-  clear: both;
-}
 
 
 
@@ -143,7 +127,7 @@ img.theme {
   width: 180px;
 }
 
-html[data-url="/docs/themes"] {
+html[data-path="/docs/themes"] {
 
   h2 {
     clear: both;
@@ -184,7 +168,7 @@ html[data-url="/docs/themes"] {
 }
 
 
-html[data-url="/docs/images"] {
+html[data-path="/docs/images"] {
 
   .image-desktop {
     background-position: 0 0;
@@ -201,7 +185,7 @@ html[data-url="/docs/images"] {
 }
 
 
-html[data-url="/docs/quick-start"] {
+html[data-path="/docs/quick-start"] {
 
   textarea {
     height: 8em;
