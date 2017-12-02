@@ -4,10 +4,11 @@ let s = string => string.split(' ');
 
 
 let swatches = {
-  pigeon: s('inverted taxi'),
-  raven: s('celtic coldshoulder ebony goldrush inverted'),
-  toucan: [],
-  heron: s('lemon cherry cyan'),
+  pigeon: s('dark lemon taxi'),
+  raven: s('blue green red'),
+  toucan: s('brown'),
+  heron: s('lemon salmon teal'),
+  owl: s('brown green yellow'),
 };
 
 let swatchTemplater = (theme, swatches) => swatches.map(s => {
