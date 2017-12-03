@@ -1,21 +1,19 @@
 import { typekit } from '/app/src/utility.js';
-import { dom, article, Plugin } from '/app/index.js';
+import { dom, article } from '/app/index.js';
 
 import './nav.js';
 
 typekit({kitId: 'nnh8ewu'});
 
-//article.ready.then(() => {
-
 function setActive() {
   dom(`nav.docs a[href="${article.attrs.url}"]`).addClass('active');
 
   if (article.attrs.url.indexOf('/docs/themes') == 0)
-    dom('nav.docs a[href="/docs/themes"]').addClass('active');
+    dom('nav.docs a[href$="/docs/themes"]').addClass('active');
   else if (article.attrs.url.indexOf('/docs/fx') == 0)
-    dom('nav.docs a[href="/docs/fx"]').addClass('active');
+    dom('nav.docs a[href$="/docs/fx"]').addClass('active');
   else
-    dom('nav.docs a[href="/docs"]').addClass('active');
+    dom('nav.docs a[href$="/docs"]').addClass('active');
 
 };
 
@@ -30,8 +28,8 @@ article.on('scroll', () => {
   });
   if (!el)
     return;
-  dom(`a[href^="${article.attrs.url}#"]`).removeClass('active');
-  dom(`a[href="${article.attrs.url}#${el.id}"]`).addClass('active');
+  dom(`a[href*="${article.attrs.url}#"]`).removeClass('active');
+  dom(`a[href$="${article.attrs.url}#${el.id}"]`).addClass('active');
 });
 
 
