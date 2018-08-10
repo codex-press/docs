@@ -1,10 +1,21 @@
-ul.button-styles {
+.change-holder {
+  text-align: center;
+}
+
+ul.indicator-styles {
+  margin-bottom: 2em;
+}
+
+ul.button-styles,
+ul.indicator-styles {
   display: inline-flex;
   flex-wrap: flex;
+  justify-content: center;
   list-style: none;
 }
 
-ul.button-styles > li {
+ul.button-styles > li,
+ul.indicator-styles > li {
   display: flex;
   margin: 0 .5em;
   padding: .7em;
@@ -16,4 +27,48 @@ ul.button-styles > li {
   color: white;
   border-radius: 5%;
   cursor: pointer;
+}
+
+.loop-colors {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loop-colors h3 {
+  width: 5rem;
+  margin: inherit;
+  padding-right: .8rem;
+}
+
+.loop-active,
+.loop-inactive {
+  line-height: .8em;
+  width: fit-content;
+  height: fit-content;
+  padding: .7em;
+  margin-right: 3em;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.loop-active {
+  background-color: #fcf52f;
+  color: #fc3a2f;
+}
+
+.loop-inactive {
+  background-color: gray;
+  color: #a0a0a0;
+  border: 1px inset #8e8e8e;
+}
+
+.loop-colors input,
+.loop-colors label {
+  margin-right: .5em;
+}
+
+.loop-colors label {
+  color: white;
 }
