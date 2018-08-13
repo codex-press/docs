@@ -31,10 +31,10 @@ class CarouselWidget extends React.Component {
       this.carousel.loop = this.state.loop
     }
     if(this.state.buttonColor !== prevState.buttonColor) {
-      this.carousel.buttonColor = this.state.buttonColor
+      this.carousel.style.setProperty('--button-color', this.state.buttonColor)
     }
     if(this.state.indicatorColor !== prevState.indicatorColor) {
-      this.carousel.indicatorColor = this.state.indicatorColor
+      this.carousel.style.setProperty('--indicator-color', this.state.indicatorColor)
     }
   }
 
